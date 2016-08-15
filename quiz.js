@@ -35,17 +35,12 @@ growTree (tree);
 // TW NOTE: TAKE NOTE OF SPACING BETWEEN AND USE README!!
 
 function growTree (tree) {
-   var spaces = tree.ht - 1;
+   var spaces = tree.ht;
    var characters = tree.ch;
    var manipulater = "";
-   for (i = 0 , x = 0; i <= tree.ht; i++ , x--) {
+   for (var i = 0 , var x = 0; i <= tree.ht*2+; i++ , x--) {
     manipulater+=characters;
-
-     console.log(manipulater);
-
-
-
-    // console.log(characterOption.repeat(height));
+    console.log("".repeat(x) + manipulater);
 
   }
 }
