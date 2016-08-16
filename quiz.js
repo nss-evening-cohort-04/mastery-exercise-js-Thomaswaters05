@@ -1,9 +1,18 @@
-
 // THESE ARE THE MAIN ELEMENTS FOR EQUATION
 var height = document.getElementById("tree_height");
 var characterOption = document.getElementById("charct_opt");
 var submitButton = document.getElementById("getTree");
 
+
+// UPON "CLICK" OR "KEYPRESS"(ENTER)- THE SUBMIT BUTTON WILL ENGAGE
+submitButton.addEventListener("click", correctInput);
+addEventListener("keypress", checkReturn);
+
+function checkReturn (e){
+  if (e.keyCode == 13){
+   correctInput()
+  }
+}
 
 // ****TESTING AND ADDING COMMENTS IN CASE SOMEONE DOES NOT INPUT PROPERLY**** PERSONAL NOTE: This came easy!
 
@@ -35,14 +44,13 @@ growTree (tree);
 // TW NOTE: TAKE NOTE OF SPACING BETWEEN AND USE README!!
 
 function growTree (tree) {
-   var spaces = tree.ht;
    var characters = tree.ch;
-   var manipulater = "";
-   for (var i = 0 , var x = 0; i <= tree.ht*2+; i++ , x--) {
-    manipulater+=characters;
-    console.log("".repeat(x) + manipulater);
-
+   for (var i = 0; i < tree.ht; i++) {
+    var numChar = 2*i+1;
+    var numSpace = tree.ht-i;
+    console.log(" ".repeat(numSpace) + characters.repeat(numChar));
   }
-}
+  }
 
-submitButton.addEventListener("click", correctInput);
+
+
